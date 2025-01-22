@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Ходжинс",
+        "photo": "/images/tj.jpg",
+        "description": "Описание персонажа 1"
+    },
+    {
+        "id": 2,
+        "name": "Бренен",
+        "photo": "/images/bn.jpg",
+        "description": "Описание персонажа 2"
+    },
+    {
+        "id": 3,
+        "name": "Энджила",
+        "photo": "/images/ea.png",
+        "description": "Описание персонажа 3"
+    }
+]

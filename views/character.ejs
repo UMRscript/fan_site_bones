@@ -2,38 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scael=1.0">
-    <title>FBI database</title>
-    <link rel="stylesheet" href="/CSS/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= character.name %></title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <header>
-        <img src="/CSS/sample/logo/Jeffersonian_Anthropology_Unit_logo.png" alt="Stories Icon" id="stories-icon">
-        <nav class="menu">
-            <a href="/">Главная</a>
-            <h2>|</h2>
-            <a href="/episode">Эпизоды</a>
-            <h2>|</h2>
-            <a href="/cast">Актёры</a>
-            <h2>|</h2>
-            <a href="/user/:username">Персонажи</a>
-        </nav>
-        <div class="search-container">
-            <input type="text" name="query" placeholder="Введите запрос">
-            <button type="submit">Поиск</button>
-        </div>
-    </header>
-</body>
-<body>
-    
-    <h1>User profile: <%= username %></h1>
-    <% if(username.toLowerCase() == 'john') {%>
-    <ul>
-        <% hobbies.forEach((el) => { %>
-            <li><%= el %></li>
-      <%  }) %>
-    </ul>
-    <% } %>
-
+    <h1><%= character.name %></h1>
+    <img src="<%= character.photo %>" alt="<%= character.name %>">
+    <p><%= character.description %></p>
+    <a href="/characters">Назад к персонажам</a>
 </body>
 </html>

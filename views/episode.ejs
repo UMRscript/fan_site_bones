@@ -18,14 +18,38 @@
                 <h2>|</h2>
                 <a href="/cast">Актёры</a>
                 <h2>|</h2>
-                <a href="/user/:username">Персонажи</a>
+                <a href="/characters">Персонажи</a>
             </nav>
             <div class="search-container">
                 <input type="text" name="query" placeholder="Введите запрос">
                 <button type="submit">Поиск</button>
             </div>
-            <div class="content-episode">
-                
-            <div>
+        </header>
+            <!-- Страница с эпизодами -->
+            <div class="containerEpisodes">
+                <!-- Алфавит -->
+                <div class="alphabet">
+                    <% alphabet.forEach(letter => { %>
+                        <a href="#<%= letter %>"><%= letter %></a>
+                    <% }); %>
+                </div>
+        
+
+                <!-- Список эпизодов -->
+                <div class="episodes">
+                    <% alphabet.forEach(letter => { %>
+                        <div id="<%= letter %>" class="episode-section">
+                            <h2><%= letter %></h2>
+                            <ul>
+                                <% episodes.forEach(episode => { 
+                                    if(episode.title[0].toUpperCase() === letter) { %>
+                                        <li><%= episode.title %></li>
+                                    <% } 
+                                }); %>
+                            </ul>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
 </body>
 </html>
