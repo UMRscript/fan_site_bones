@@ -69,8 +69,6 @@ const PORT = 3000;
 
 // Запуск сервера
 app.listen(PORT, () => {
-<<<<<<< HEAD
     console.log(`Сервер запущен: http://localhost:${PORT}`);
 });
-
     
