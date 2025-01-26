@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scael=1.0">
     <title>FBI database</title>
     <link rel="stylesheet" href="/CSS/main.css">
 </head>
@@ -21,24 +21,21 @@
                 <a href="/characters">Персонажи</a>
             </nav>
             <div class="search-container">
-                <form action="/user" method="get">
-                    <input type="text" name="query" placeholder="Введите запрос">
-                    <button type="submit">Поиск</button>
-                </form>
+                <input type="text" name="query" placeholder="Введите запрос">
+                <button type="submit">Поиск</button>
             </div>
         </header>
-        <h1>Персонажи</h1>
-    <div class="characters">
-        <% characters.forEach(character => { %>
-            <div class="character">
-                <a href="/character/<%= character.id %>">
-                    <img src="<%= character.photo %>" alt="<%= character.name %>">
-                    <h2><%= character.name %></h2>
-                </a>
-            </div>
-        <% }); %>
+        <h1>Актёры</h1>
+        <div class="characters">
+            <% actors.forEach(actor => { %>
+                <div class="character">
+                    <a href="/actor/<%= actor.id %>">
+                        <img src="<%= actor.photo %>" alt="<%= actor.name %>">
+                        <h2><%= actor.name %></h2>
+                    </a>
+                </div>
+            <% }); %>
+        </div>
     </div>
-    </div>
-    
 </body>
 </html>

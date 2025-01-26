@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scael=1.0">
-    <title>FBI database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FBI Database</title>
     <link rel="stylesheet" href="/CSS/main.css">
 </head>
 <body>
@@ -12,9 +12,9 @@
         <nav class="menu">
             <a href="/">Главная</a>
             <h2>|</h2>
-            <a href="/episode">Эпизоды</a>
+            <a href="/episodes">Эпизоды</a>
             <h2>|</h2>
-            <a href="/cast">Актёры</a>
+            <a href="/actors">Актёры</a>
             <h2>|</h2>
             <a href="/characters">Персонажи</a>
         </nav>
@@ -23,11 +23,11 @@
             <button type="submit">Поиск</button>
         </div>
     </header>
-</body>
-<body>
     
-    <h1 class="headings">Cast</h1>
-    <p>Lorem ipsum dolor sit amet consectetur</p>
-    
+    <h1><%= actor.name %></h1>
+    <img src="<%= actor.photo %>" alt="<%= actor.name %>">
+    <p><%= actor.description %></p>
+    <a href="/actors">Назад к персонажам</a>
 </body>
 </html>
+    

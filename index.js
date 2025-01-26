@@ -22,10 +22,31 @@ app.get('/', (req, res) => {
     res.render('homepage'); // Рендер представления 'homepage.ejs'
 });
 
-// Страница эпизода
-app.get('/episode', (req, res) => {
-    res.render('episode'); // Рендер представления 'episode.ejs'
+const episodes = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'episodes.json'), 'utf-8')); // Импорт episodes.json и создание алфавита 
+const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+// Страница эпизодов с списком по алфавиту 
+app.get('/episodes', (req, res) => {
+    const selectedLetter = req.query.letter || ""; // Получаем выбранную букву из параметров
+    const filteredEpisodes = selectedLetter
+        ? episodes.filter(episode => episode.title.toUpperCase().startsWith(selectedLetter.toUpperCase()))
+        : episodes; // Фильтруем серии по букве или показываем всё
+    res.render('episodes', { episodes: filteredEpisodes, alphabet, selectedLetter });
 });
+
+// Страница отдельного эпизода
+app.get('/episode/:id', (req, res) => {
+    const episodeId = parseInt(req.params.id, 10); // Получаем ID серии из параметров URL
+    const episode = episodes.find(e => e.id === episodeId); // Находим серию по ID
+
+    if (!episode) {
+        return res.status(404).send('Эпизод не найден');
+    }
+
+    res.render('episode_detail', { episode });
+});
+
+
 
 const characters = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'characters.json'), 'utf-8'));
 
@@ -47,10 +68,25 @@ app.get('/character/:id', (req, res) => {
     res.render('character', {character});
 });
 
+const actors = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'actors.json'), 'utf-8'));
 
-// Страница актёрского состава
-app.get('/cast', (req, res) => {
-    res.render('cast'); // Рендер представления 'cast.ejs'
+
+// Главная траница актёрского состава
+app.get('/actors', (req, res) => {
+    res.render('actors', {actors}); // Рендер представления 'actors.ejs'
+});
+
+//Страница конкретного актёра
+app.get('/actor/:id', (req, res) => {
+
+    const actorId = parseInt(req.params.id, 10); // Получаем ID актёра из параметров URL
+    const actor = actors.find(c => c.id === actorId); // Ищем актёра по id
+
+    if (!actor){
+        return res.status(404).send('Актёр не найден');
+    }
+
+    res.render('actor', {actor});
 });
 
 // Обработка 404 (Страница не найдена)

@@ -1,0 +1,30 @@
+
+[
+    {
+      "id": 1,
+      "title": "A New Beginning",
+      "description": "The first episode of the series, where everything starts.",
+      "image": "/images/episode1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Betrayal",
+      "description": "An unexpected betrayal changes everything.",
+      "image": "/images/episode2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Challenge Accepted",
+      "description": "The protagonist faces a tough challenge.",
+      "image": "/images/episode3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Dangerous Game",
+      "description": "A dangerous game begins with high stakes.",
+      "image": "/images/episode4.jpg"
+    }
+  ]
+  
+
+

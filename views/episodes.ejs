@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Episodes</title>
+  <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body>
+  <div>
+    <header>
+      <img src="/CSS/sample/logo/Jeffersonian_Anthropology_Unit_logo.png" alt="Stories Icon" id="stories-icon">
+      <nav class="menu">
+          <a href="/">Главная</a>
+          <h2>|</h2>
+          <a href="/episodes">Эпизоды</a>
+          <h2>|</h2>
+          <a href="/actors">Актёры</a>
+          <h2>|</h2>
+          <a href="/characters">Персонажи</a>
+      </nav>
+      <div class="search-container">
+          <input type="text" name="query" placeholder="Введите запрос">
+          <button type="submit">Поиск</button>
+      </div>
+  </header>
+  <div class="content">
+    <div class="content">
+      <div class="left">
+          <h2>Левая часть</h2>
+          <p>Это текст в левой части. Здесь может быть информация, которая отображается слева от линии.</p>
+      </div>
+
+      
+
+      <div class="episodes">
+        <h1>Episodes</h1>
+    
+      <!-- Алфавитный фильтр -->
+      <div class="alphabet">
+        <% alphabet.forEach(letter => { %>
+          <a 
+            href="/episodes?letter=<%= letter %>" 
+            class="<%= letter === selectedLetter ? 'active' : '' %>">
+            <%= letter %>
+          </a>
+        <% }) %>
+      </div>
+    
+      <!-- Список серий -->
+      <div class="episode-list">
+        <% if (episodes.length > 0) { %>
+          <ul>
+            <% episodes.forEach(episode => { %>
+              <li>
+                <a href="/episode/<%= episode.id %>"><%= episode.title %></a>
+              </li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <p>No episodes found for "<%= selectedLetter %>".</p>
+        <% } %>
+      </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+  </div>
+</div>
+    </body>
+</html>

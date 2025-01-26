@@ -2,19 +2,19 @@
 [
     {
         "id": 1,
-        "name": "Ходжинс",
+        "name": "Томас Джозеф Тайн",
         "photo": "/images/tj.jpg",
         "description": "Описание персонажа 1"
     },
     {
         "id": 2,
-        "name": "Бренен",
+        "name": "Микаэла Конлин",
         "photo": "/images/bn.jpg",
         "description": "Описание персонажа 2"
     },
     {
         "id": 3,
-        "name": "Энджила",
+        "name": "Эмили Дешанель",
         "photo": "/images/ea.png",
         "description": "Описание персонажа 3"
     }
