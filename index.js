@@ -17,6 +17,44 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Маршрут для поиска 
+app.get('/search', (req, res) => {
+    const query = req.query.query ? req.query.query.toLowerCase() : '';
+
+    // Фильтрация эпизодов, персонажей и актёров по названию
+    const filteredEpisodes = episodes.filter(episode =>
+        episode.title.toLowerCase().includes(query)
+    );
+    const filteredCharacters = characters.filter(character =>
+        character.name.toLowerCase().includes(query)
+    );
+    const filteredActors = actors.filter(actor =>
+        actor.name.toLowerCase().includes(query)
+    );
+
+    res.render('search_results', {
+        query,
+        filteredEpisodes,
+        filteredCharacters,
+        filteredActors,
+    });
+});
+
+// Маршрут для автодополнения
+app.get('/autocomplete', (req, res) => {
+    const query = req.query.query ? req.query.query.toLowerCase() : '';
+  
+    // Собираем данные для поиска
+    const suggestions = [
+      ...episodes.map(e => ({ id: e.id, name: e.title, type: 'episode' })),
+      ...characters.map(c => ({ id: c.id, name: c.name, type: 'character' })),
+      ...actors.map(a => ({ id: a.id, name: a.name, type: 'actor' })),
+    ].filter(item => item.name.toLowerCase().includes(query));
+  
+    res.json(suggestions.slice(0, 10)); // Возвращаем максимум 10 совпадений
+  });
+  
+
 // Главная страница
 app.get('/', (req, res) => {
     res.render('homepage'); // Рендер представления 'homepage.ejs'

@@ -243,3 +243,27 @@ a {
 a:hover {
     color: #007BFF;
 }
+
+
+
+
+#search-results {
+    position: absolute;
+    background: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  #search-results li {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  #search-results li:hover {
+    background-color: #f0f0f0;
+  }

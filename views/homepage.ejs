@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FBI Database</title>
     <link rel="stylesheet" href="/CSS/main.css">    
+    <script href="/js/search.js"></script>
 </head>
 <body>
     <!-- Основной контейнер -->
@@ -20,10 +21,24 @@
                 <h2>|</h2>
                 <a href="/characters">Персонажи</a>
             </nav>
-            <div class="search-container">
-                <input type="text" name="query" placeholder="Введите запрос">
+            <form action="/search" method="get" class="search-container" id="search-form">
+                <input type="text" name="query" placeholder="Введите запрос" autocomplete="off">
                 <button type="submit">Поиск</button>
-            </div>
+            </form>
+            <ul id="search-results"></ul>
+            
+            <!-- Тестовая форма 
+            <form id="search-form">
+                <input 
+                  type="text" 
+                  id="search-input" 
+                  name="query" 
+                  placeholder="Поиск..." 
+                  autocomplete="off" 
+                />
+                <button type="button">🔍</button>
+              </form>
+              <ul id="search-results"></ul>-->
         </header>
     
         <div class="content">
