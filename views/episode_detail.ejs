@@ -5,28 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= episode.title %></title>
   <link rel="stylesheet" href="/CSS/main.css">
+  <link rel="stylesheet" href="/CSS/episode_detail.css">
 </head>
 <body>
-  <header>
-    <img src="/CSS/sample/logo/Jeffersonian_Anthropology_Unit_logo.png" alt="Stories Icon" id="stories-icon">
-    <nav class="menu">
-        <a href="/">Главная</a>
-        <h2>|</h2>
-        <a href="/episodes">Эпизоды</a>
-        <h2>|</h2>
-        <a href="/actors">Актёры</a>
-        <h2>|</h2>
-        <a href="/characters">Персонажи</a>
-    </nav>
-    <div class="search-container">
-        <input type="text" name="query" placeholder="Введите запрос">
+  <div class="page-container">
+    <header>
+      <img src="/CSS/sample/logo/Jeffersonian_Anthropology_Unit_logo.png" alt="Stories Icon" id="stories-icon">
+      <nav class="menu">
+          <a href="/">Главная</a>
+          <h2>|</h2>
+          <a href="/episodes">Эпизоды</a>
+          <h2>|</h2>
+          <a href="/actors">Актёры</a>
+          <h2>|</h2>
+          <a href="/characters">Персонажи</a>
+      </nav>
+      <form action="/search" method="get" class="search-container" id="search-form">
+        <input type="text" name="query" placeholder="Введите запрос" autocomplete="off">
         <button type="submit">Поиск</button>
-    </div>
-</header>
-  
-  <h1><%= episode.title %></h1>
-  <img src="<%= episode.image %>" alt="<%= episode.title %>" style="width:300px;">
-  <p><%= episode.description %></p>
-  <a href="/episodes">Back to episodes</a>
+    </form>
+    <ul id="search-results"></ul>
+  </header>
+    
+    <h1 class="page_name" ><%= episode.title %></h1>
+    <img src="<%= episode.image %>" alt="<%= episode.title %>" style="width:300px;" id="img_detail">
+    <p><%= episode.description %></p>
+    <a href="/episodes" class="back">Back to episodes</a>  
+  </div>
 </body>
 </html>

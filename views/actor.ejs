@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FBI Database</title>
     <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/actor.css">
 </head>
 <body>
+<div class="page-container">
     <header>
         <img src="/CSS/sample/logo/Jeffersonian_Anthropology_Unit_logo.png" alt="Stories Icon" id="stories-icon">
         <nav class="menu">
@@ -18,16 +20,18 @@
             <h2>|</h2>
             <a href="/characters">Персонажи</a>
         </nav>
-        <div class="search-container">
-            <input type="text" name="query" placeholder="Введите запрос">
+        <form action="/search" method="get" class="search-container" id="search-form">
+            <input type="text" name="query" placeholder="Введите запрос" autocomplete="off">
             <button type="submit">Поиск</button>
-        </div>
+        </form>
+        <ul id="search-results"></ul>
     </header>
     
-    <h1><%= actor.name %></h1>
+    <h1 class="page_name"><%= actor.name %></h1>
     <img src="<%= actor.photo %>" alt="<%= actor.name %>">
     <p><%= actor.description %></p>
-    <a href="/actors">Назад к персонажам</a>
+    <a href="/actors" class="back">Назад к персонажам</a>
+</div>
 </body>
 </html>
     

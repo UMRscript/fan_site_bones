@@ -1,0 +1,49 @@
+/*Редактирование актёров*/
+    
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #007BFF;
+}
+
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.character {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 200px;
+}
+
+.character img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #007BFF;
+}
+
+/* Единый формат для карточек актёров*/
+.character img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+  }

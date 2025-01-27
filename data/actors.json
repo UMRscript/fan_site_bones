@@ -3,19 +3,19 @@
     {
         "id": 1,
         "name": "Томас Джозеф Тайн",
-        "photo": "/images/tj.jpg",
+        "photo": "/images/images_for_actors/tt.webp",
         "description": "Описание персонажа 1"
     },
     {
         "id": 2,
         "name": "Микаэла Конлин",
-        "photo": "/images/bn.jpg",
+        "photo": "/images/images_for_actors/mk.webp",
         "description": "Описание персонажа 2"
     },
     {
         "id": 3,
         "name": "Эмили Дешанель",
-        "photo": "/images/ea.png",
+        "photo": "/images/images_for_actors/ed.webp",
         "description": "Описание персонажа 3"
     }
 ]

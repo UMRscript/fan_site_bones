@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FBI database</title>
     <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/characters.css">
 </head>
 <body>
     <!-- Основной контейнер -->
@@ -21,13 +22,15 @@
                 <a href="/characters">Персонажи</a>
             </nav>
             <div class="search-container">
-                <form action="/user" method="get">
-                    <input type="text" name="query" placeholder="Введите запрос">
+                <form action="/search" method="get" class="search-container" id="search-form">
+                    <input type="text" name="query" placeholder="Введите запрос" autocomplete="off">
                     <button type="submit">Поиск</button>
                 </form>
+                <ul id="search-results"></ul>
             </div>
         </header>
-        <h1>Персонажи</h1>
+
+        <h1 class="page_name">Персонажи</h1>
     <div class="characters">
         <% characters.forEach(character => { %>
             <div class="character">
@@ -38,7 +41,6 @@
             </div>
         <% }); %>
     </div>
-    </div>
-    
+</div>
 </body>
 </html>

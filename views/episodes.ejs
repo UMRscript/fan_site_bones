@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Episodes</title>
+  <link rel="stylesheet" href="/CSS/episodes.css">
   <link rel="stylesheet" href="/CSS/main.css">
 </head>
 <body>
@@ -19,48 +20,47 @@
           <h2>|</h2>
           <a href="/characters">Персонажи</a>
       </nav>
-      <div class="search-container">
-          <input type="text" name="query" placeholder="Введите запрос">
-          <button type="submit">Поиск</button>
-      </div>
-  </header>
+      <form action="/search" method="get" class="search-container" id="search-form">
+        <input type="text" name="query" placeholder="Введите запрос" autocomplete="off">
+        <button type="submit">Поиск</button>
+      </form>
+    <ul id="search-results"></ul>
+    </header>
 
+    <!-- Алфавитный фильтр -->
+    <div class="alphabet">
+      <% alphabet.forEach(letter => { %>
+        <a 
+          href="/episodes?letter=<%= letter %>" 
+          class="<%= letter === selectedLetter ? 'active' : '' %>">
+          <%= letter %>
+        </a>
+      <% }) %>
+    </div>
 
-  <div class="content">
     <div class="content">
       <div class="episodes">
-        <h1>Episodes</h1>
+        <h1 class="page_name">Эпизоды</h1>
     
-      <!-- Алфавитный фильтр -->
-      <div class="alphabet">
-        <% alphabet.forEach(letter => { %>
-          <a 
-            href="/episodes?letter=<%= letter %>" 
-            class="<%= letter === selectedLetter ? 'active' : '' %>">
-            <%= letter %>
-          </a>
-        <% }) %>
-      </div>
-    
-      <!-- Список серий -->
-      <div class="episode-list">
-        <% if (episodes.length > 0) { %>
-          <ul>
-            <% episodes.forEach(episode => { %>
-              <li>
-                <a href="/episode/<%= episode.id %>"><%= episode.title %></a>
-              </li>
-            <% }) %>
-          </ul>
-        <% } else { %>
-          <p>No episodes found for "<%= selectedLetter %>".</p>
-        <% } %>
-      </div>
+        <!-- Список серий -->
+        <div class="episode-list">
+          <% if (episodes.length > 0) { %>
+            <ul>
+              <% episodes.forEach(episode => { %>
+                <li>
+                  <a href="/episode/<%= episode.id %>">
+                    <img src="<%= episode.image %>" alt="<%= episode.title %>" class="episode-image">
+                    <span><%= episode.title %></span>
+                  </a>
+                </li>
+              <% }) %>
+            </ul>
+          <% } else { %>
+            <p>No episodes found for "<%= selectedLetter %>".</p>
+          <% } %>
+        </div>
       </div>
     </div>
-    </div>
-
-
-</div>
+  </div>
 </body>
 </html>

@@ -1,7 +1,11 @@
 
+/*Основа каждой страницы*/
+
 /*Редактирован загаловка в начале каждой страницы*/
 .page_name{
     font-family: Geneva, Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 /* Основной стиль для body */
@@ -15,6 +19,10 @@ body {
     align-items: center; /* Центрирование по вертикали */
     padding: 20px; /* Отступы для фона */
     box-sizing: border-box;
+    /* Отвесттвенное за скролинг */
+    min-height: 100%;
+    height: auto;
+    overflow: auto;
 }
 
 /* Контейнер для всей страницы */
@@ -28,6 +36,9 @@ body {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Тень для объёма */
     display: flex;
     flex-direction: column; /* Шапка сверху, контент снизу */
+    flex: 5;
+    background-color: #7da0ca;
+    border-radius: 20px 20px 20px 20px; /* Закругление нижнего левого угла */
 } 
 
 /* Шапка */
@@ -136,8 +147,6 @@ header {
     border: 2px solid #001E63;
 }
 
-
-
 /*Редактирование homepage*/
 
 .bones_logo{
@@ -156,117 +165,7 @@ header {
     height: calc(100% - 150px); /* Контент занимает оставшуюся высоту */
 }
 
-/* Контейнер для контента по эпизодам*/
-.content-episode {
-    display: flex;
-    height: calc(100% - 150px); /* Контент занимает оставшуюся высоту */
-}
-
-/* Левая и правая часть контента */
-.left, .right {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow: auto; /* Скрытие при переполнении */
-}
-
-/* Стили для вертикальной разделительной линии */
-.divider {
-    width: 4px;
-    background-color: #333;
-    height: 100%;
-}
-
-/* Стили для контента слева */
-.left {
-    flex: 5;
-    background-color: #7da0ca;
-    border-radius: 0 0 0 20px; /* Закругление нижнего левого угла */
-}
-
-/* Стили для контента справа */
-.right {
-    flex: 2.5;
-    background-color: #7da0ca;
-    border-radius: 0 0 20px 0; /* Закругление нижнего правого угла */
-}
-
-/*Редактирование эпизодов*/
-
-.episodes {
-    background-color: #001E63;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-}
-
-/*Редактирование персонажей*/
-
-.characters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-}
-
-.character {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    max-width: 200px;
-}
-
-.character img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-a:hover {
-    color: #007BFF;
-}
-
-/*Редактирование актёров*/
-
-.cast {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-}
-
-.character {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    max-width: 200px;
-}
-
-.cast img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-a:hover {
-    color: #007BFF;
-}
-
-
-
-
+/*Стили для резултятов поиска*/
 #search-results {
     position: absolute;
     background: white;
@@ -286,4 +185,11 @@ a:hover {
   
   #search-results li:hover {
     background-color: #f0f0f0;
+  }
+
+  .back {
+    text-align: center;
+    background-color: yellow;
+    color: #001E63;
+    border: 2px solid #001E63;
   }

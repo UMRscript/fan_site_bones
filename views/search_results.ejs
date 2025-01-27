@@ -1,35 +1,73 @@
-<script src="/js/search.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FBI Database</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/slider.css">    
+    <script href="/js/search.js"></script>
+    
+</head>
+<body>
+    <!-- Основной контейнер -->
 
+    <!-- Шапка -->
+    <div class="page-container">
+        <header>
+            <img src="/CSS/sample/logo/Jeffersonian_Anthropology_Unit_logo.png" alt="Stories Icon" id="stories-icon">
+            <nav class="menu">
+                <a href="/">Главная</a>
+                <h2>|</h2>
+                <a href="/episodes">Эпизоды</a>
+                <h2>|</h2>
+                <a href="/actors">Актёры</a>
+                <h2>|</h2>
+                <a href="/characters">Персонажи</a>
+            </nav>
+            <form action="/search" method="get" class="search-container" id="search-form">
+                <input type="text" name="query" placeholder="Введите запрос" autocomplete="off">
+                <button type="submit">Поиск</button>
+            </form>
+            <ul id="search-results"></ul>
+        </header>
 
-<h1>Результаты поиска для "<%= query %>"</h1>
+        <h1 class="page_name">Результаты поиска для "<%= query %>"</h1>
 
-<% if (filteredEpisodes.length) { %>
-  <h2>Эпизоды</h2>
-  <ul>
-    <% filteredEpisodes.forEach(episode => { %>
-      <li><a href="/episode/<%= episode.id %>"><%= episode.title %></a></li>
-    <% }) %>
-  </ul>
-<% } %>
+        <% if (filteredEpisodes.length) { %>
+          <h2 class="page_name">Эпизоды</h2>
+          <ul>
+            <% filteredEpisodes.forEach(episode => { %>
+              <li class="page_name"><a href="/episode/<%= episode.id %>"><%= episode.title %></a></li>
+            <% }) %>
+          </ul>
+        <% } %>
+    
+        <% if (filteredCharacters.length) { %>
+          <h2 class="page_name">Персонажи</h2>
+          <ul>
+            <% filteredCharacters.forEach(character => { %>
+              <li class="page_name"><a href="/character/<%= character.id %>"><%= character.name %></a></li>
+            <% }) %>
+          </ul>
+        <% } %>
+    
+        <% if (filteredActors.length) { %>
+          <h2 class="page_name">Актёры</h2>
+          <ul>
+            <% filteredActors.forEach(actor => { %>
+              <li class="page_name"><a href="/actor/<%= actor.id %>"><%= actor.name %></a></li>
+            <% }) %>
+          </ul>
+        <% } %>
+    
+        <% if (!filteredEpisodes.length && !filteredCharacters.length && !filteredActors.length) { %>
+          <p>Ничего не найдено</p>
+        <% } %>    
 
-<% if (filteredCharacters.length) { %>
-  <h2>Персонажи</h2>
-  <ul>
-    <% filteredCharacters.forEach(character => { %>
-      <li><a href="/character/<%= character.id %>"><%= character.name %></a></li>
-    <% }) %>
-  </ul>
-<% } %>
+      </div>
 
-<% if (filteredActors.length) { %>
-  <h2>Актёры</h2>
-  <ul>
-    <% filteredActors.forEach(actor => { %>
-      <li><a href="/actor/<%= actor.id %>"><%= actor.name %></a></li>
-    <% }) %>
-  </ul>
-<% } %>
+</body>
+</html>
 
-<% if (!filteredEpisodes.length && !filteredCharacters.length && !filteredActors.length) { %>
-  <p>Ничего не найдено</p>
-<% } %>
+  
