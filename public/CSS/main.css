@@ -1,7 +1,12 @@
 
+/*Редактирован загаловка в начале каждой страницы*/
+.page_name{
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
 /* Основной стиль для body */
 body {
-    background-color: #eedac9; /* Фон за пределами контента */
+    background-color: #021024; /* Фон за пределами контента */
     margin: 0;
     font-family: Arial, sans-serif;
     height: 100vh; /* Высота страницы */
@@ -28,7 +33,8 @@ body {
 /* Шапка */
 header {
     height: 150px; /* Высота шапки */
-    background: linear-gradient(270deg, #001E63 0%, #002675 40%, #0044A1 70%, #E1E3E5 100%);
+    /*background: linear-gradient(270deg, #001E63 0%, #002675 40%, #0044A1 70%, #E1E3E5 100%);*/
+    background-color: #052659;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,6 +136,20 @@ header {
     border: 2px solid #001E63;
 }
 
+
+
+/*Редактирование homepage*/
+
+.bones_logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.description_s{
+    font-size: 15px;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    float: right;
+}
 /* Контейнер для контента */
 .content {
     display: flex;
@@ -152,7 +172,7 @@ header {
 
 /* Стили для вертикальной разделительной линии */
 .divider {
-    width: 2px;
+    width: 4px;
     background-color: #333;
     height: 100%;
 }
@@ -160,14 +180,14 @@ header {
 /* Стили для контента слева */
 .left {
     flex: 5;
-    background-color: #cfc7c8;
+    background-color: #7da0ca;
     border-radius: 0 0 0 20px; /* Закругление нижнего левого угла */
 }
 
 /* Стили для контента справа */
 .right {
-    flex: 1;
-    background-color: #b39a84;
+    flex: 2.5;
+    background-color: #7da0ca;
     border-radius: 0 0 20px 0; /* Закругление нижнего правого угла */
 }
 
