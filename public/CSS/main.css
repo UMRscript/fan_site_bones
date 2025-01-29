@@ -29,6 +29,7 @@ body {
 .page-container {
     width: 97%; /* Увеличена ширина на 30% */
     max-width: 1560px; /* Максимальная ширина */
+    min-width:500px;
     height: 97%; /* Увеличена высота на 30% */
     background-color: white; /* Белый фон для основного контента */
     border-radius: 20px; /* Закругление углов */
@@ -120,7 +121,7 @@ header {
     color: white;
     outline: none;
     transition: all 0.3s;
-    max-width: 200px; /* Уменьшена ширина */
+    max-width: 100px; /* Уменьшена ширина */
 }
 
 .search-container input[type="text"]:focus {
@@ -147,7 +148,7 @@ header {
     border: 2px solid #001E63;
 }
 
-/*Редактирование homepage*/
+/* Редактирование homepage */
 
 .bones_logo{
     display: block;
@@ -165,7 +166,7 @@ header {
     height: calc(100% - 150px); /* Контент занимает оставшуюся высоту */
 }
 
-/*Стили для резултятов поиска*/
+/* Стили для резултятов поиска */
 #search-results {
     position: absolute;
     background: white;
@@ -182,6 +183,10 @@ header {
     padding: 8px;
     cursor: pointer;
   }
+
+  .result {
+    margin-left: 18px;
+  }
   
   #search-results li:hover {
     background-color: #f0f0f0;
@@ -193,3 +198,8 @@ header {
     color: #001E63;
     border: 2px solid #001E63;
   }
+
+/* Убирает полностью полосу прокрутки */
+::-webkit-scrollbar {
+    width: 0;
+}

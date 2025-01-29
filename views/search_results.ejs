@@ -26,7 +26,7 @@
                 <a href="/characters">Персонажи</a>
             </nav>
             <form action="/search" method="get" class="search-container" id="search-form">
-                <input type="text" name="query" placeholder="Введите запрос" autocomplete="off">
+                <input type="text" name="query" placeholder="...." autocomplete="off">
                 <button type="submit">Поиск</button>
             </form>
             <ul id="search-results"></ul>
@@ -36,27 +36,27 @@
 
         <% if (filteredEpisodes.length) { %>
           <h2 class="page_name">Эпизоды</h2>
-          <ul>
+          <ul class="result" >
             <% filteredEpisodes.forEach(episode => { %>
-              <li class="page_name"><a href="/episode/<%= episode.id %>"><%= episode.title %></a></li>
+              <li class="page_name"><a class="result" href="/episode/<%= episode.id %>"><%= episode.title %></a></li>
             <% }) %>
           </ul>
         <% } %>
     
         <% if (filteredCharacters.length) { %>
           <h2 class="page_name">Персонажи</h2>
-          <ul>
+          <ul class="result">
             <% filteredCharacters.forEach(character => { %>
-              <li class="page_name"><a href="/character/<%= character.id %>"><%= character.name %></a></li>
+              <li class="page_name"><a  href="/character/<%= character.id %>"><%= character.name %></a></li>
             <% }) %>
           </ul>
         <% } %>
     
         <% if (filteredActors.length) { %>
           <h2 class="page_name">Актёры</h2>
-          <ul>
+          <ul class="result" >
             <% filteredActors.forEach(actor => { %>
-              <li class="page_name"><a href="/actor/<%= actor.id %>"><%= actor.name %></a></li>
+              <li class="page_name"><a  href="/actor/<%= actor.id %>"><%= actor.name %></a></li>
             <% }) %>
           </ul>
         <% } %>
